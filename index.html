@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSville Courier Management System</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <h1 class="mx-auto text-center mb-5">JSville Courier Management System</h1>
+    <section class="form-container">
+      <h2>Package Details</h2>
+      <form>
+        <div>
+          <div class="mb-3">
+            <label for="recipient-name" class="form-label"
+              >Recipient Name</label
+            >
+            <input type="text" class="form-control" id="recipient-name" />
+          </div>
+          <div class="mb-3">
+            <label for="package-id" class="form-label">Package ID</label>
+            <input type="text" class="form-control" id="package-id" />
+          </div>
+          <div class="mb-3">
+            <label for="delivery-address" class="form-label"
+              >Delivery Address</label
+            >
+            <input type="text" class="form-control" id="delivery-address" />
+          </div>
+          <div class="mb-3">
+            <label for="weight" class="form-label">Package ID</label>
+            <input type="number" class="form-control" id="weight" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mx-auto d-block">
+          Add package
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
