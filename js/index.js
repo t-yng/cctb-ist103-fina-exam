@@ -25,6 +25,26 @@ function submitNewPackage(event) {
   if (!isValid) {
     return;
   }
+  const form = document.getElementById("add-package-form");
+  const formData = new FormData(form);
+  const recipientName = formData.get("recipient-name");
+  const packageId = formData.get("package-id");
+  const deliveryAddress = formData.get("delivery-address");
+  const weight = formData.get("weight");
+  const trackingCode = generateTrackingCode(packageId, weight);
+
+  packages.push({
+    recipientName,
+    packageId,
+    deliveryAddress,
+    weight,
+    trackingCode,
+  });
+
+  alert(`Package added successfully!\nTracking Code: ${trackingCode}`);
+
+  packages = quickSortPackages(packages);
+  displayPackages(packages);
 }
 
 function initErrorMessages(ids) {
@@ -127,10 +147,41 @@ function displayValidationError(errorMessageId, error) {
   errorMessageElement.classList.toggle("display-none", false);
 }
 
+function quickSortPackages(packages) {
+  if (packages.length <= 1) {
+    return packages;
+  }
+  const pivot = packages[Math.floor(packages.length / 2)].weight;
+  const less = packages.filter((pkg) => pkg.weight < pivot);
+  const equal = packages.filter((pkg) => pkg.weight === pivot);
+  const greater = packages.filter((pkg) => pkg.weight > pivot);
+
+  return quickSortPackages(less).concat(equal, quickSortPackages(greater));
+}
+
+function displayPackages(packages) {
+  const tbody = document.querySelector("#packages-table tbody");
+  tbody.innerHTML = "";
+
+  for (const package of packages) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${package.recipientName}</td>
+      <td>${package.packageId}</td>
+      <td>${package.deliveryAddress}</td>
+      <td>${package.weight}</td>
+      <td>${package.trackingCode}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
 function main() {
   document
     .getElementById("add-package-form")
     .addEventListener("submit", submitNewPackage);
+
+  displayPackages(packages);
 }
 
 main();
