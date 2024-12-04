@@ -1,17 +1,17 @@
 let packages = [
   {
     recipientName: "John Doe",
-    packageId: 123456,
+    packageId: "123456",
     deliveryAddress: "123 Elm Street",
     weight: 2,
-    trackingCode: "0b111101",
+    trackingCode: "0b111100010010000000010",
   },
   {
     recipientName: "Jane Doe",
-    packageId: 123457,
+    packageId: "123457",
     deliveryAddress: "456 Maple Lane",
     weight: 5,
-    trackingCode: "0b111101",
+    trackingCode: "0b111100010010000010101",
   },
 ];
 
@@ -30,7 +30,7 @@ function submitNewPackage(event) {
   const recipientName = formData.get("recipient-name");
   const packageId = formData.get("package-id");
   const deliveryAddress = formData.get("delivery-address");
-  const weight = formData.get("weight");
+  const weight = Number(formData.get("weight"));
   const trackingCode = generateTrackingCode(packageId, weight);
 
   packages.push({
