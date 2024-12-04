@@ -116,6 +116,8 @@ function validatePackageID(packageId) {
     return [false, "This value is required. Please enter a value."];
   } else if (!/^[0-9]+$/.test(packageId)) {
     return [false, "PackageID must be a only numeric value."];
+  } else if (packages.map((pkg) => pkg.packageId).includes(packageId)) {
+    return [false, "PackageID already exists."];
   }
 
   return [true, ""];
