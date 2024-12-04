@@ -14,7 +14,7 @@ Users can add a package and track their packages.
 
 ```
 $ git clone https://github.com/t-yng/cctb-ist103-fina-exam.git
-$ cd cctb-ist107-fina-exam
+$ cd cctb-ist103-fina-exam
 $ vscode .
 ```
 
