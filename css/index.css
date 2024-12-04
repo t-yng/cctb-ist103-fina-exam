@@ -6,3 +6,10 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px 1px #ddd;
 }
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}

@@ -13,32 +13,60 @@
     />
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/index.css" />
+    <script src="/js/index.js" defer></script>
   </head>
   <body>
     <h1 class="mx-auto text-center mb-5">JSville Courier Management System</h1>
     <section class="form-container mb-5">
       <h2>Package Details</h2>
-      <form>
+      <form id="add-package-form">
         <div>
           <div class="mb-3">
             <label for="recipient-name" class="form-label"
               >Recipient Name</label
             >
-            <input type="text" class="form-control" id="recipient-name" />
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-name"
+              name="recipient-name"
+            />
+            <p id="recipient-name-error" class="error-message display-none"></p>
           </div>
           <div class="mb-3">
             <label for="package-id" class="form-label">Package ID</label>
-            <input type="text" class="form-control" id="package-id" />
+            <input
+              type="text"
+              class="form-control"
+              id="package-id"
+              name="package-id"
+            />
+            <p id="package-id-error" class="error-message display-none"></p>
           </div>
           <div class="mb-3">
             <label for="delivery-address" class="form-label"
               >Delivery Address</label
             >
-            <input type="text" class="form-control" id="delivery-address" />
+            <input
+              type="text"
+              class="form-control"
+              id="delivery-address"
+              name="delivery-address"
+            />
+            <p
+              id="delivery-address-error"
+              class="error-message display-none"
+            ></p>
           </div>
           <div class="mb-3">
             <label for="weight" class="form-label">Weight (kg)</label>
-            <input type="number" class="form-control" id="weight" />
+            <input
+              type="number"
+              class="form-control"
+              id="weight"
+              name="weight"
+            />
+            <p id="weight-error" class="error-message display-none"></p>
           </div>
         </div>
         <button type="submit" class="btn btn-primary mx-auto d-block">
