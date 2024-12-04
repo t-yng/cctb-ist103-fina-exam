@@ -1,4 +1,4 @@
-# IST107 Final Exam
+# IST103 Final Exam
 This is JSville Courier Management System.
 Users can add a package and track their packages.
 
@@ -13,7 +13,7 @@ Users can add a package and track their packages.
 - access the localhost address on your browser.
 
 ```
-$ git clone https://github.com/t-yng/cctb-ist107-fina-exam.git
+$ git clone https://github.com/t-yng/cctb-ist103-fina-exam.git
 $ cd cctb-ist107-fina-exam
 $ vscode .
 ```
